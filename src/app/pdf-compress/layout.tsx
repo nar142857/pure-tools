@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "PDF压缩 - 在线免费压缩PDF文件",
+  description:
+    "免费在线PDF压缩工具，支持轻度/标准/极限多级压缩，减小PDF文件体积。文件在浏览器本地处理，保护隐私安全。",
+  keywords: ["PDF压缩", "PDF缩小", "PDF减小体积", "在线PDF压缩", "compress PDF"],
+};
+
+export default function PdfCompressLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}
