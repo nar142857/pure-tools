@@ -103,10 +103,10 @@ export default function Home() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-blue-100/80 mb-3 font-light max-w-2xl mx-auto leading-relaxed">
-            纯净的在线文件处理工具
+            免费在线 PDF 压缩、图片压缩、格式转换工具
           </p>
           <p className="text-base text-blue-200/50 mb-10">
-            免费 · 零广告 · 零上传 · 隐私安全
+            浏览器本地处理 · 零上传 · 零广告 · 保护隐私安全
           </p>
 
           <div className="max-w-lg mx-auto relative group">

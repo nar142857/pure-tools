@@ -1,0 +1,62 @@
+# PureTools
+
+> 免费在线文件处理工具集。所有文件在浏览器本地处理，零上传，保护隐私安全。
+
+## 概述
+
+PureTools 是一个完全免费的在线文件处理工具网站。所有处理都在用户浏览器本地通过 WebAssembly 和 Canvas API 完成，文件不会上传到任何服务器。零广告、零注册、无文件大小限制、无使用次数限制。
+
+## 核心特点
+
+- **隐私安全**：所有文件在浏览器本地处理，零上传、零服务器接触
+- **极速体验**：零广告、零弹窗、零注册，拖拽即用
+- **完全免费**：无文件大小限制，无使用次数限制，无隐藏收费
+
+## 可用工具
+
+### PDF压缩
+- URL: https://puretools.com/pdf-compress
+- 功能：多级压缩PDF文件（轻度/标准/极限），减小文件体积
+- 支持预览压缩前后对比效果
+
+### 图片压缩
+- URL: https://puretools.com/image-compress
+- 功能：压缩JPG、PNG、WebP格式图片
+- 支持批量压缩，可调节压缩质量（1-100）和最大尺寸
+
+### PDF转图片
+- URL: https://puretools.com/pdf-to-image
+- 功能：将PDF每页转为高清PNG或JPG图片
+- 支持自定义缩放比例（1x-4x）
+
+### 图片转PDF
+- URL: https://puretools.com/image-to-pdf
+- 功能：多张图片合并为一个PDF文档
+- 支持A4/Letter纸张大小，自定义页面方向
+
+### 图片格式转换
+- URL: https://puretools.com/image-convert
+- 功能：JPG、PNG、WebP格式互转
+- 支持批量处理，可调节输出质量
+
+### PDF合并/拆分
+- URL: https://puretools.com/pdf-merge-split
+- 功能：合并多个PDF为一个文件，或将PDF拆分为单页
+- 支持拖拽调整文件顺序
+
+## 技术实现
+
+- 前端框架：Next.js + React + TypeScript
+- 文件处理：全部在浏览器端完成
+- PDF处理：pdf-lib + pdfjs-dist（Mozilla PDF.js）
+- 样式：Tailwind CSS
+- 无后端服务器，无数据库
+
+## 使用方式
+
+所有工具的使用流程一致：
+1. 打开对应工具页面
+2. 拖拽或点击上传文件
+3. 设置参数（如压缩级别、输出格式等）
+4. 点击处理按钮
+5. 预览结果并下载
