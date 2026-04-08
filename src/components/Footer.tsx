@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { SiteStats } from "@/components/Busuanzi";
 
 const pdfTools = [
   { name: "PDF压缩", href: "/pdf-compress" },
@@ -85,7 +88,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800/50 text-center text-sm text-gray-600">
+        <div className="mt-12 pt-8 border-t border-gray-800/50 flex flex-col items-center gap-3 text-sm text-gray-600">
+          <SiteStats />
           <p>© {new Date().getFullYear()} PureTools. 所有文件处理均在您的浏览器本地完成。</p>
         </div>
       </div>

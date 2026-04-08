@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { PageViews } from "@/components/Busuanzi";
+import { GiscusComments } from "@/components/GiscusComments";
 
 interface ToolPageLayoutProps {
   icon: string;
@@ -10,6 +13,8 @@ interface ToolPageLayoutProps {
 }
 
 export function ToolPageLayout({ icon, title, description, children }: ToolPageLayoutProps) {
+  const pathname = usePathname();
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <div className="mb-6">
@@ -33,9 +38,12 @@ export function ToolPageLayout({ icon, title, description, children }: ToolPageL
           <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">免费</span>
           <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">🔒 本地处理</span>
           <span className="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">零上传</span>
+          <div className="flex-1" />
+          <PageViews />
         </div>
       </div>
       <div className="space-y-6">{children}</div>
+      <GiscusComments mapping={pathname} />
     </div>
   );
 }
