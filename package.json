@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "npm run build && wrangler pages deploy out --project-name puretools"
   },
   "dependencies": {
     "jspdf": "^4.2.1",

@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PureTools - 纯净在线文件处理工具
 
-## Getting Started
+100% 浏览器本地处理，无需上传，保护隐私安全。
 
-First, run the development server:
+## 在线访问
+
+https://puretools.pages.dev/
+
+## 功能列表
+
+| 分类 | 工具 | 说明 |
+|------|------|------|
+| PDF | PDF 压缩 | 多级压缩，减小文件体积 |
+| PDF | PDF 转图片 | 将每页转为 PNG/JPG |
+| PDF | PDF 合并/拆分 | 多个 PDF 合并或拆分为单页 |
+| 图片 | 图片压缩 | JPG/PNG/WebP 批量压缩 |
+| 图片 | 图片转 PDF | 多张图片合并为一个 PDF |
+| 图片 | 图片格式转换 | JPG/PNG/WebP 格式互转 |
+
+## 技术栈
+
+- **框架**: Next.js 16 (App Router, Turbopack)
+- **样式**: Tailwind CSS 4
+- **语言**: TypeScript
+- **部署**: Cloudflare Pages（静态导出）
+
+核心依赖：
+- `pdf-lib` — PDF 操作
+- `pdfjs-dist` — PDF 渲染
+- `jspdf` — PDF 生成
+
+## 本地开发
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+浏览器访问 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建 & 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+项目使用 `output: "export"` 静态导出，构建产物在 `out/` 目录。
 
-## Learn More
+```bash
+# 构建
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# 部署到 Cloudflare Pages
+npm run deploy
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 项目结构
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                    # 页面路由
+│   ├── page.tsx            # 首页
+│   ├── layout.tsx          # 根布局
+│   ├── sitemap.ts          # 站点地图
+│   ├── pdf-compress/       # PDF 压缩
+│   ├── pdf-to-image/       # PDF 转图片
+│   ├── pdf-merge-split/    # PDF 合并/拆分
+│   ├── image-compress/     # 图片压缩
+│   ├── image-to-pdf/       # 图片转 PDF
+│   └── image-convert/      # 图片格式转换
+├── components/             # 公共组件
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── FileDropZone.tsx
+│   ├── ToolPageLayout.tsx
+│   ├── ProcessingStatus.tsx
+│   └── ImageCompareSlider.tsx
+├── lib/
+│   └── tools.ts            # 工具配置与辅助函数
+└── empty.ts                # Turbopack 空模块桩（勿删）
+```

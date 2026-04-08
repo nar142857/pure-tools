@@ -1,11 +1,15 @@
+import path from "path";
 import type { NextConfig } from "next";
 
+const emptyModule = path.resolve(__dirname, "src/empty.ts");
+
 const nextConfig: NextConfig = {
-  turbopack: {},
-  webpack: (config) => {
-    config.resolve.alias.canvas = false;
-    config.resolve.alias.encoding = false;
-    return config;
+  output: "export",
+  turbopack: {
+    resolveAlias: {
+      canvas: emptyModule,
+      encoding: emptyModule,
+    },
   },
 };
 
